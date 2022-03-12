@@ -1,14 +1,14 @@
 # Home Media Server Setup
-This script helps you with installing the latest version of Docker and Docker Compose in Ubuntu and some essential applications for setting up your home media library.
+This script helps you install the latest version of Docker and Docker Compose in Ubuntu and some essential applications for setting up your home media library.
 
 The list of apps that will be automatically installed are:
 
-- Portainer – For managing the docker applications with a web gui (https://www.portainer.io/)
+- Portainer – For managing the docker applications with a web GUI (https://www.portainer.io/)
 - Plex – For organizing and streaming the media content (https://www.plex.tv/)
 - Tautulli – A simple tool to monitor plex activity and collect the statistics (https://tautulli.com/)
-- Sonarr – A collection maanger for web series (https://sonarr.tv/)
+- Sonarr – A collection manager for web series (https://sonarr.tv/)
 - Radarr – A collection manager for movies (https://radarr.video/)
-- Sabnzbd – A usenet client/downloader (https://sabnzbd.org/)
+- Sabnzbd – A USENET client/downloader (https://sabnzbd.org/)
 - Deluge – A torrent tracker and downloader (https://deluge-torrent.org/)
 - Overseerr – A media discovery and request manager for Plex (https://overseerr.dev)
 - Jackett – A bridge for apps listed above to communicate with the torrent indexers of your choice (https://github.com/Jackett/Jackett)
@@ -16,9 +16,9 @@ The list of apps that will be automatically installed are:
 
 ---
 ## Prerequisites
- 1. You need to have an ubuntu/debian based machine.
+ 1. You need to have an Ubuntu/Debian-based machine.
  
- 2. Your instance should have the updated version of 'git' installed. You can check if you have git installed or not by running the command `git version` and have a look at the output.
+ 2. Your instance should have the updated version of 'git' installed. You can check if you have git installed or not by running the command `git version` and looking at the output.
  
        ![git version](https://user-images.githubusercontent.com/101336634/158008355-768918e3-7ced-462f-9a9f-e52e539c875b.png)
     
@@ -33,7 +33,7 @@ The list of apps that will be automatically installed are:
 
 Open Putty or any ssh tool that you use to connect to your instance. Clone this repository to any directory.
 
-`https://github.com/Jayavel-S/Media-Server` and cd into the parent directory `cd Media-Server`.
+`git clone https://github.com/Jayavel-S/Media-Server` and cd into the parent directory `cd Media-Server`.
 
 ---
 
@@ -42,17 +42,17 @@ Here, you'll have three files
 
 - **docker-compose.yml** (the compose stack to install Portainer, Sonarr, Radarr, Sabnzbd, Deluge, Overseerr, Jackett, Tautulli, Plex, and Watchtower)
 
-- **setup.sh** (the script to install the docker engine and to setup the dependencies)
+- **setup.sh** (the script to install the docker engine and to set up the dependencies)
 
 ---
 
-Before proceeding further, we need to update the environment variables (PUID, PGID, and the Time Zone) and the volume mappings as per your preference. This example uses the 'nano' editor but you can use any text editor of your choice.
+Before proceeding further, we need to update the environment variables (PUID, PGID, and the Time Zone) and the volume mappings as per your preference. This example uses the 'nano' editor, but you can use any text editor of your choice.
 
 Type in `nano .env` and edit the values as required. You need to update the download directory's path and the directory in which the media resides.
 
 ![env](https://user-images.githubusercontent.com/101336634/158014795-95b46d1c-85af-45f7-80ac-85711ab8b2b7.png)
 
-Once you have made the necessary changes, you can press "ctrl+o" and "Enter" and "ctrl+x" to exit the editor. Alternatively you can also press "ctrl+x" directly and choose 'Yes'.
+Once you have made the necessary changes, you can press "ctrl+o" and "Enter" and "ctrl+x" to exit the editor. Alternatively, you can also press "ctrl+x" directly and choose 'Yes’.
 
 This will update the .env file with the necessary values. Now, we can start to execute the script.
 
@@ -60,20 +60,20 @@ This will update the .env file with the necessary values. Now, we can start to e
 
 ## Executing the Script:
 
-The script is named as **setup.sh**. Run the script with elevated privileages.
+The script is named as **setup.sh**. Run the script with elevated privileges.
 
 **`sudo sh setup.sh`**
 
-This will pull the latest version of docker according to the platform that you are using (x86/x64/ARM) and also install the docker-compose relevant to that binary using python. This will take a few minutes depending on your network speed and device specifications.
+This will pull the latest version of docker according to the platform you are using (x86/x64/ARM) and install the docker-compose relevant to that binary using python. Depending on your network speed and device specifications, this will take a few minutes.
 
-Once the installation is complete, it is always suggested to reboot the system once and check for the status.
+Once the installation is complete, it is always suggested to reboot the system and check for the status.
 
-`sudo reboot now` and once the machine is back up, you can go to your Portainer GUI. It is defaulted to the port **9443**.
+`sudo reboot now`, and once the machine is back up, you can go to your Portainer GUI. It defaults to the port **9443**.
 
 Go to `https://your device's IP address:9443` (Portainer generates an SSL certificate by default in the new version, that's why we use https:// instead of http://)
 
-Once logged in, you need to setup your admin account and you'll be presented with the dashboard.
+Once logged in, you need to set up your admin account, and you'll be presented with the dashboard.
 
 ![portainer](https://user-images.githubusercontent.com/101336634/158015527-e7d01b42-03b8-4f4f-b0a3-0d343b685a37.png)
 
-If you see this page, the system has successfully processed the docker installation. You can now play with your new setup and configure the applications as per your liking.
+The system has successfully processed the docker installation if you see this page. You can now play with your new setup and configure the applications as per your liking.
