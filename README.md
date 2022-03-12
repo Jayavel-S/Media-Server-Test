@@ -14,7 +14,6 @@ The list of apps that will be automatically installed are:
 - Jackett – A bridge for apps listed above to communicate with the torrent indexers of your choice (https://github.com/Jackett/Jackett)
 - Watchtower – A container to automatically update all the application containers listed above (https://github.com/containrrr/watchtower)
 
----
 ## Prerequisites
  1. You need to have an Ubuntu/Debian-based machine.
  
@@ -55,8 +54,6 @@ Type in `nano .env` and edit the values as required. You need to update the down
 Once you have made the necessary changes, you can press "ctrl+o" and "Enter" and "ctrl+x" to exit the editor. Alternatively, you can also press "ctrl+x" directly and choose 'Yes’.
 
 This will update the .env file with the necessary values. Now, we can start to execute the script.
-
----
 
 ## Executing the Script:
 
