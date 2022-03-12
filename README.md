@@ -28,7 +28,7 @@ Here, you'll have three files
 
 - **docker-compose.yml** (the compose stack to install Portainer, Sonarr, Radarr, Sabnzbd, Deluge, Overseerr, Jackett, Tautulli, Plex, and Watchtower)
 
-- **install.sh** (the script to install the docker engine and to setup the dependencies)
+- **setup.sh** (the script to install the docker engine and to setup the dependencies)
 
 ---
 
@@ -36,9 +36,9 @@ Before proceeding further, we need to update the environment variables (PUID, PG
 
 `nano .env`
 
-The script is named as **install.sh**. Run the script with elevated privileages.
+The script is named as **setup.sh**. Run the script with elevated privileages.
 
-**`sudo sh install.sh`**
+**`sudo sh setup.sh`**
 
 This will pull the latest version of docker according to the platform that you are using (x86/x64/ARM) and also install the docker-compose relevant to that binary using python.
 
