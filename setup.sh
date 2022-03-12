@@ -15,7 +15,7 @@ sudo apt-get install -y python3-dev
 sudo apt-get install -y python3 python3-pip
 
 # Installing docker-compose using pip3
-sudo pip3 install -y docker-compose
+sudo pip3 install docker-compose
 
 # Enabling docker to start automatically on hardware reboot
 sudo systemctl enable docker
